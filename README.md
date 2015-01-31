@@ -37,8 +37,8 @@ the previous letter, or to start from 0 again.
 The Python program `pickle`s this table, so as not to recalculate it every time. The Javascript version
 stores it in a `.js` file.
 
-[1]: http://rawgit.com/harpocrates/Brainfuck/master/Encode_Brainfuck_Text.html
-[2]: https://github.com/harpocrates/Brainfuck/master/Images/screencapture-1.png
+[1]: http://rawgit.com/harpocrates/Brainfuck/master/JavaScript/Encode_Brainfuck_Text.html
+[2]: https://raw.githubusercontent.com/harpocrates/Brainfuck/master/Images/screencapture-1.png
 [3]: http://codegolf.stackexchange.com/questions/3450/how-to-encode-shortest-brainf-ck-strings
 
 ### Possible improvements

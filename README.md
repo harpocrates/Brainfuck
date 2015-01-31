@@ -15,7 +15,7 @@ The memory cell pointed to at that time will be green.
 
 There are a couple bonus instructions:
 
-  * `!` clears memory
+  * `!` clears memory and resets the pointer to address 0
   * `#` prints out memory at that moment
   * `;` exits the loop
   
@@ -41,7 +41,7 @@ stores it in a `.js` file.
 [2]: https://raw.githubusercontent.com/harpocrates/Brainfuck/master/Images/screencapture-1.png
 [3]: http://codegolf.stackexchange.com/questions/3450/how-to-encode-shortest-brainf-ck-strings
 
-### Possible improvements
+##### Possible improvements
 
   * Make the algorithm less locally greedy: explore options of going forward and back
   * Construct multiple letters at a time.

@@ -5,8 +5,6 @@ This project has two parts:
   1. interpreter - interprets the brainfuck code
   2. encoder - generates (reasonably) condensed brainfuck code to output strings ([online version][1])
 
-[1]:
-
 #### Interpreter (`Brainfuck.py`)
 
 Standard implementations of brainfuck require that memory be unlimited (or at least in theory) and
@@ -34,24 +32,17 @@ as opposed to 12.3 times).
 
 The general approach (borrowed) is to construct a table that calculates the costs to go from a
 given letter to another. Then, for every letter, we either choose to reuse the value left behind by
-the previous letter, or to start from 0 again. To go from any one letter to another, we have three options
+the previous letter, or to start from 0 again.
 
-  <!--1. Concatenate a bunch of "+" or "-" together. So "a", which is 97, would be 97 plus signs concatenated.-->
-  <!--2. We have sequences of the form `[A>B<]>` where `A` and `B` are themselves sequences of plus or minus-->
-  <!--   signs. If we start this combination at a value of `C`, then we expect the loop to run $n$ times, where -->
-  <!--   $$-->
-  <!--    C+An = 0 \pmod{256}-->
-  <!--   $$-->
-  <!--   And the value pointed to when the snippet ends will be $x = Bn \pmod{256}$. Then, we get that $Ax = -->
-  <!--   -BC \pmod{256}$.-->
-  <!--3. Use a combination of 1 and 2. If the cost to go from a given letter to some intermediary letter plus-->
-  <!--   the cost of going from that intermediary letter to the destination letter is less than the cost of-->
-  <!--   going straight to the destination letter, take that path instead.-->
+The Python program `pickle`s this table, so as not to recalculate it every time. The Javascript version
+stores it in a `.js` file.
 
-[2]: 
+[1]: http://rawgit.com/harpocrates/Brainfuck/master/Encode_Brainfuck_Text.html
+[2]: https://github.com/harpocrates/Brainfuck/master/Images/screencapture-1.png
 [3]: http://codegolf.stackexchange.com/questions/3450/how-to-encode-shortest-brainf-ck-strings
 
 ### Possible improvements
 
-Make the algorithm less locally greedy: explore options 
+  * Make the algorithm less locally greedy: explore options of going forward and back
+  * Construct multiple letters at a time.
 

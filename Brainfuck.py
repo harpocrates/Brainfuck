@@ -65,11 +65,7 @@ def read(s):
     elif c=='+': memory[i] += 1
     elif c=='-': memory[i] -= 1
     elif c=='.': to_print += chr(int(memory[i])%256)
-    elif c==',':
-      if to_print != "":
-        print(to_print)
-        to_print = ""
-      memory[i] = Byte(ord(input("")))
+    elif c==',': memory[i] = Byte(ord(input("")))
     elif c=='[':
       if memory[i]==0:
         bracket_balance = 1
